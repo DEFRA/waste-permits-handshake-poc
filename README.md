@@ -56,6 +56,22 @@ Simply call
 npm start
 ```
 
+### When deployed remotely
+
+When deployed remotely you will be accessing the instance via ssh. Starting the project as usual using `npm start` will result in the app being killed when you exit your ssh session.
+
+To get round this the project uses [Forever](https://github.com/foreverjs/forever). So on the remote server start the app using
+
+```bash
+npm run forever
+```
+
+This will start the app as a daemon process, with the logs going into files in the `logs` directory (you'll want to create this first using `mkdir logs`).
+
+Should you need to kill the process first run `node_modules/.bin/forever list`. This will give you details of the currently running script, including its PID.
+
+You can then stop it using `node_modules/.bin/forever stop 30183` where **30183** is the PID.
+
 ## Contributing to this project
 
 If you have an idea you'd like to contribute please log an issue.
