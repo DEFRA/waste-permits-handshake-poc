@@ -1,0 +1,54 @@
+﻿extends layout
+
+block content
+  h1 WasteNodeJsPoc
+  h2 Create
+  div
+    form(action='/',method='post')
+      input(name='_method', value='POST', type='hidden')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='firstname') First name
+            input(id='firstname',type='text',value='',placeholder='',name='firstname')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='lastname') Last name
+            input(id='lastname',type='text',value='',placeholder='',name='lastname')
+      div(data-role='fieldcontain')   
+        input(type='submit',value='Create',data-transition='fade', data-theme='c') 
+  h2 Update
+  div
+    form(action='/',method='post')
+      input(name='_method', value='PATCH', type='hidden')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='contactid') Contact Id
+            input(id='firstname',type='text',value='f17846bb-9d1e-e711-80ff-5065f38a3a01',placeholder='',name='contactid')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='firstname') First name
+            input(id='firstname',type='text',value='',placeholder='',name='firstname')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='lastname') Last name
+            input(id='lastname',type='text',value='',placeholder='',name='lastname')
+      div(data-role='fieldcontain')
+        input(type='submit',value='Submit',data-transition='fade', data-theme='c')
+  h2 Delete
+  div
+    form(action='/',method='post')
+      input(name='_method', value='DELETE', type='hidden')
+      div(data-role='fieldcontain')
+        fieldset(data-role='controlgroup')
+          label(for='contactid') Contact Id
+            input(id='firstname',type='text',value='',placeholder='',name='contactid')
+      div(data-role='fieldcontain')   
+        input(type='submit',value='Delete',data-transition='fade', data-theme='c') 
+  div
+    p #{token}
+    ul
+      each c in contacts
+        li= c.fullname + ' - ' + c.contactid
+    ul
+      each l in log
+        li= l.datetime + ' - ' + l.description
