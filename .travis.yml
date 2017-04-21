@@ -1,0 +1,23 @@
+language: node_js
+
+# Project was built against version 6 of Node so that is all we are interested
+# in testing
+node_js:
+  - "6"
+
+# Travis CI clones repositories to a depth of 50 commits, which is only really
+# useful if you are performing git operations.
+# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
+git:
+  depth: 3
+
+# We cache the node_modules directory so subsequent builds are quicker
+cache:
+  directories:
+    - node_modules
+
+# Because we have no tests, we have to override the default (npm test) and
+# instead call what we want to check. In the case of this project its simply
+# that all code abides by Standard JS
+script:
+  - npm run lint

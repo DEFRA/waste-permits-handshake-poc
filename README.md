@@ -1,5 +1,9 @@
 ﻿# Waste permits handshake POC
 
+[![Build Status](https://travis-ci.org/DEFRA/waste-permits-handshake-poc.svg?branch=master)](https://travis-ci.org/DEFRA/waste-permits-handshake-poc)
+[![NSP Status](https://nodesecurity.io/orgs/cruikshanks/projects/e47b548c-f123-4e84-b2f0-58834ca231f0/badge)](https://nodesecurity.io/orgs/cruikshanks/projects/e47b548c-f123-4e84-b2f0-58834ca231f0)
+[![Dependency Status](https://dependencyci.com/github/DEFRA/waste-permits-handshake-poc/badge)](https://dependencyci.com/github/DEFRA/waste-permits-handshake-poc)
+
 We are currently building the next generation of a waste permits solution as a [digital service](https://www.gov.uk/service-manual/service-standard). This will allow users in the future to more easily submit applications for permits online.
 
 Our current design is to marry a GOV.UK public web application built using [Node.js](https://nodejs.org/en/) with [Microsoft Dynamics](https://www.microsoft.com/en-gb/dynamics365/home) in the back end. In the future all permit applications will be recieved and managed in the **Dynamics** instance, and we feel it is the most suitable platform to build on for this.
