@@ -1,10 +1,20 @@
-﻿# Waste permits handshake Proof-of-concept
+﻿# Waste permits handshake POC
 
 We are currently building the next generation of a waste permits solution as a [digital service](https://www.gov.uk/service-manual/service-standard). This will allow users in the future to more easily submit applications for permits online.
 
 Our current design is to marry a GOV.UK public web application built using [Node.js](https://nodejs.org/en/) with [Microsoft Dynamics](https://www.microsoft.com/en-gb/dynamics365/home) in the back end. In the future all permit applications will be recieved and managed in the **Dynamics** instance, and we feel it is the most suitable platform to build on for this.
 
 Applications for permits per year are relatively very small in number, so we want to use a simple design that will be easy to maintain. This project is the first in a series of *proof of concepts* (POC) intended to validate if we can simply talk directly to the **Dynamics** app, essentially treating it as our database. As we'll be saving and reading user content at each step in the journey we need to be sure that this design is both valid and resilient, hence POC's like this.
+
+## Initial PoC
+
+This project focuses on authenticating with and then querying our current **Dynamics** install. Specifically we’re looking to see
+
+- How we do this from Node.js
+- How much time in total it takes
+- Of the total time, how much is taken up by the authentication process, and how much on the actual query
+
+We’ll be deploying the Node.js application to AWS, and having it talk to our Dynamics install in Azure to make the test as realistic as possible. We’re not trying to get accurate timings, but an initial indication of whether we should stop now or continue in this direction.
 
 ## Pre-requisites
 
