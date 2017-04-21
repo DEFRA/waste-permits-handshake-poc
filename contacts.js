@@ -18,8 +18,7 @@ Contacts.prototype.get = function (req, res, next) {
     'OData-Version': '4.0',
     'Accept': 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
-    'Prefer': 'odata.maxpagesize=500',
-    'Prefer': 'odata.include-annotations=OData.Community.Display.V1.FormattedValue'
+    'Prefer': 'odata.maxpagesize=500, odata.include-annotations=OData.Community.Display.V1.FormattedValue'
   }
 
   // set the crm request parameters
