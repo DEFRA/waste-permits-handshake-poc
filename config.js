@@ -15,5 +15,7 @@ config.username = process.env.CRM_USERNAME
 config.userpassword = process.env.CRM_PASSWORD
 // OAuth token endpoint for App registered with Azure AD
 config.tokenendpoint = process.env.CRM_TOKEN_ENDPOINT
+// CRM Tenant e.g. mycrminstance.onmicrosoft.com
+config.tenant = process.env.CRM_TENANT
 
 module.exports = config
